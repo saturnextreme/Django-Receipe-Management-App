@@ -1,3 +1,3 @@
 # Django-Receipe-Management-App
 
-https://django-receipe-management-app.vercel.app/
+Link for Website: https://django-receipe-management-app.vercel.app/

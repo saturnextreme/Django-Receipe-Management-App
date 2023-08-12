@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="{% static 'receipe.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar bg-black">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="#">Receipe Sharing Site</a>
+      </div>
+    </nav>
+
+    <div class="container card p-3 mt-3 shadow l-g">
+      <span class='d-flex'>
+        <a href="{% url 'home' %}">
+          <button type="submit" class="btn btn-success mt-2">Back</button>
+        </a>  
+        <form class="d-flex mx-auto mt-2 w-75" role="search">
+          <input class="form-control me-2" type="search" placeholder="Receipe Search" aria-label="Search" name="search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </span>
+
+      {% for i in receipe %}
+      <div class='receipe_section card p-3 m-3 receipe'>
+        <h5>{{forloop.counter}}. {{ i.receipe_name }}</h5>
+        <p>{{ i.receipe_desc }}</p>
+        <img class="receipe_image" src="/media/{{i.receipe_image}}"></img>
+        <span>
+          <a href="/delete/receipe/{{i.id}}"> 
+            <button type="submit" class="btn btn-danger mt-3">Delete</button>
+          </a>
+          <a href="/update/receipe/{{i.id}}"> 
+            <button type="submit" class="btn btn-success mt-3">Update</button>
+          </a>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

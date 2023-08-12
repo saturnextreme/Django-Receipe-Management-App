@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.receipe {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px auto;
+}
+.receipe_image {
+    width: auto;
+    height: 600px;
+}

@@ -47,4 +47,4 @@ python manage.py runserver
 # The application will be accessible at http://localhost:8000/ in your web browser.
 ```
 # 7. Access the Admin Panel
-# You can access the admin panel at http://localhost:8000/admin/ and log in with the superuser credentials you created earlier.
+  You can access the admin panel at http://localhost:8000/admin/ and log in with the superuser credentials you created earlier.
